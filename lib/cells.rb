@@ -76,7 +76,7 @@ module Cells
   end
   
   def self.rails3_1?
-    ::Rails::VERSION::MINOR == 1
+    ::Rails::VERSION::MINOR >= 1
   end
 end
 
