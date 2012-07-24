@@ -20,7 +20,7 @@ module Cell
     def process_opts_for(opts, state)
       opts[:action] = (opts[:view] || state).gsub(/(?:\.html|\.haml)/i, '')
 
-      dirname = self.class.name.match(/^(.*)Snippet$/)[1].underscore
+      dirname = self.class.name.match(/^(.*)(Snippet|Template)$/)[1].underscore
       opts[:template] = lookup_context.find_template("#{dirname}/#{opts[:action]}")
       lookup_context.formats = [opts.delete(:format)] if opts[:format]
     end
